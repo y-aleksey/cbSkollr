@@ -6,8 +6,7 @@ We decided on a parallax page that would help draw the visitors in and maintain 
 I was happy that way it turned out and wanted to share the work I did. 
 I used skollr.js and www.ihatetomatoes.net for their great tutorials. As well as SASS, modernizer.js and grunt.js.
 
-### View Page
-www.careerbuildercommunications.com/candidatebehavior/
+<a href="www.careerbuildercommunications.com/candidatebehavior/">View Site</a>
 
 ## Sample Code
 You can find my .js file in _/components/js/script.js
