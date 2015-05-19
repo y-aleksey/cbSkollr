@@ -1,7 +1,5 @@
 ## Synopsis
 
-Parallax page using skrollr.js to promote career builder extensive data on the interview process. Responsive, Mobile-friendly, custom navigation and animation.
-
 Career Builder wanted to promote their extensive data on the interview process.
 We decided on a parallax page that would help draw the visitors in and maintain their interests throughout the entire work.
 
