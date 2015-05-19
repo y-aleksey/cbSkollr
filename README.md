@@ -1,12 +1,17 @@
 ## Synopsis
 
-This was a job, I was hired to do for Career Builder. 
-I was happy that way it turned out and wanted to share the work I did. And for potential employers to see my work.
+Parallax page using skrollr.js to promote career builder extensive data on the interview process. Responsive, Mobile-friendly, custom navigation and animation.
+
+Career Builder wanted to promote their extensive data on the interview process.
+We decided on a parallax page that would help draw the visitors in and maintain their interests throughout the entire work.
+
+I was happy that way it turned out and wanted to share the work I did. 
+I used skollr.js and www.ihatetomatoes.net for their great tutorials. As well as SASS, modernizer.js and grunt.js.
+
 
 ## Installation
 
 No installation required.
-
 
 ## License
 
