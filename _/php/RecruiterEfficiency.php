@@ -1,0 +1,1 @@
+<img src="_/img/RecruiterEfficiency.png"/>

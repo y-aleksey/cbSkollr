@@ -1,0 +1,369 @@
+//http://codepen.io/auginator/pen/HbshE
+@mixin cover-background($img-uri, $background-top:"center",
+  $background-left:"center", $background-attachment:"scroll") {
+  background: url($img-uri) no-repeat unquote($background-top) 
+  unquote($background-left) unquote($background-attachment); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  
+}
+
+@mixin cover-horizontal($img-uri){
+
+  background: url($img-uri) no-repeat;
+  background-size: cover;
+  //100% auto
+ 
+}
+
+
+
+@mixin red {
+  border:solid thin red;
+}
+
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin circle($width, $color) {
+  display: inline-block;
+  width: $width;
+  height: $width;
+  background: $color;
+  -webkit-border-radius: $width/2;
+     -moz-border-radius: $width/2;
+          border-radius: $width/2;
+}
+
+
+// Round top corners by amount
+@mixin round-corner($position, $amount: $default_rounded_amount) {
+border-#{$position}-radius: $amount;
+-webkit-border-#{$position}-radius: $amount;
+}
+@mixin round-corner-mozilla($position, $amount: $default_rounded_amount) {
+-moz-border-radius-#{$position}: $amount;
+}
+
+@mixin round-top-corners($amount: $amount) {
+@include round-corner("top-left", $amount);
+@include round-corner("top-right", $amount);
+@include round-corner-mozilla("topleft", $amount);
+@include round-corner-mozilla("topright", $amount);
+}
+
+@mixin round-right-corners($amount: $amount) {
+@include round-corner("bottom-right", $amount);
+@include round-corner("top-right", $amount);
+@include round-corner-mozilla("bottomright", $amount);
+@include round-corner-mozilla("topright", $amount);
+}
+
+
+// Round bottom corners by amount
+@mixin round-bottom-corners($amount: $amount) {
+@include round-corner("bottom-left", $amount);
+@include round-corner("bottom-right", $amount);
+@include round-corner-mozilla("bottomleft", $amount);
+@include round-corner-mozilla("bottomright", $amount);
+}
+
+@mixin round-left-corners($amount: $amount) {
+@include round-corner("top-left", $amount);
+@include round-corner("bottom-left", $amount);
+@include round-corner-mozilla("topleft", $amount);
+@include round-corner-mozilla("bottomleft", $amount);
+}
+
+@mixin round-all-corners($amount: $amount) {
+@include round-corner("top-left", $amount);
+@include round-corner("top-right", $amount);
+@include round-corner-mozilla("topleft", $amount);
+@include round-corner-mozilla("topright", $amount);
+@include round-corner("bottom-left", $amount);
+@include round-corner("bottom-right", $amount);
+@include round-corner-mozilla("bottomleft", $amount);
+@include round-corner-mozilla("bottomright", $amount);
+}
+
+
+
+
+
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin bp-large {
+  @media only screen and (max-width: 60em) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (max-width: 40em) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (max-width: 30em) {
+    @content;
+  }
+}
+
+//animation
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }  
+  @-ms-keyframes $animation-name {
+    @content;
+  }
+  @-o-keyframes $animation-name {
+    @content;
+  }  
+  @keyframes $animation-name {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+@mixin linear-gradient-split($fromColor, $toColor){
+background: $fromColor; /* Old browsers */
+background: -moz-linear-gradient(top,  $fromColor 0%, $fromColor 48%, $toColor 53%, $toColor 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$fromColor), color-stop(48%,$fromColor), color-stop(53%,$toColor), color-stop(100%,$toColor)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  $fromColor 0%,$fromColor 48%,$toColor 53%,$toColor 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  $fromColor 0%,$fromColor 48%,$toColor 53%,$toColor 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  $fromColor 0%,$fromColor 48%,$toColor 53%,$toColor 100%); /* IE10+ */
+background: linear-gradient(to bottom,  $fromColor 0%,$fromColor 48%,$toColor 53%,$toColor 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$fromColor', endColorstr='$toColor',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin horizontal-gradient($from, $to, $stop: 100%) {
+  /* fallback/image non-cover color */
+  background-color: $from;
+
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+
+  /* IE10+ */
+  background: -ms-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Standard */
+  background: linear-gradient(to right, $from 0%, $to $stop);
+
+  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
+}
+
+
+%vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50);
+  }
+}
+
+@mixin blockCenter($width) {
+  width: $width;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+
+@mixin abCenter($width, $height) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: $height;
+    width: $width;
+    margin-left: - $width / 2;
+    margin-top: - $height / 2;
+}
+
+
+
+//keyframes-loader screen--------/////////
+// use of keyframes mixin
+@include keyframes(rotating) {
+  0% { @include transform(rotate(0deg));  }
+  100% { @include transform(rotate(360deg));  } 
+}
+
+@-webkit-keyframes rotating {
+    0% {
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+@-moz-keyframes rotating {
+    0% {
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+@-ms-keyframes rotating {
+    0% {
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+@-o-keyframes rotating {
+    0% {
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+@keyframes rotating {
+    0% {
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+

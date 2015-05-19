@@ -1,0 +1,703 @@
+/*
+section {
+	  width:100vw;
+	  height:100vh;
+	  border:solid thin red;
+	  padding-top: 20px; padding-bottom: 20px;
+
+	  
+}
+*/
+
+
+
+
+
+#slide1{  
+	min-height: 500px; height: 50vh;
+	@include cover-horizontal('../img/bg1-a.jpg'); 
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center 50%;
+
+	@media only screen and (max-width: $smBreak) { width: auto; min-width: 0;
+		background-position: top center; background-size: cover; }
+
+	#slide1a{
+		width: 100%;
+		min-height: 500px; height: 50vh;
+	    @include cover-horizontal('../img/bg1b.png'); 
+	    background-position: 50% 0%;
+		//background-size: 100% auto; 
+	    @media only screen and (max-width: $smBreak) {  background-position: 50% 0%; }
+	} 
+
+	#slide1copy{
+		position: absolute;
+		top:50%;
+		left:50vw;
+		width: 650px;
+		height: 162px;
+		margin-left: -325px;
+		margin-top:  -81px; 
+		z-index: 10;
+		color: $white;
+		text-align: center;
+
+		@media only screen and (max-width: $smBreak) {
+				img{
+					width: 300px;
+					content: url("../img/bg1CopyMobile.png")
+				}
+				width: 100%;
+				margin: 0px;
+				top: 225px; left:0;
+
+		}
+
+		
+		
+	}
+}
+
+
+
+#slide2{  	
+	min-height: 500px; 	height: 55vh; max-height: 540px; 
+	@include cover-horizontal('../img/bg2.jpg'); 
+	background-size: auto auto;
+	background-position: center 50%;
+	background-color: #5c6a73;
+
+
+	@media only screen and (max-width: $smBreak) { 
+		width: auto; 
+		min-width: 0;
+		h1{letter-spacing: .5px !important;}
+	}
+			
+
+
+	#slide2a{
+
+		width:800px;
+		height: 100%;
+
+	    position: absolute;
+	    left:50%;
+	    margin-left: -400px;
+	    bottom:-5%;
+		
+		@include transform(scale(1));		    
+	    @include cover-horizontal('../img/bg2NewFGA.png'); 
+		background-size: auto auto;
+	    background-position: 50% 50%;
+		  
+	} 
+
+	#slide2copy{
+		@include abCenter(318px,108px);
+		margin-top: 0px;
+		 background-image: url(../img/bg2Copy.png);
+		 @media only screen and (max-width: ($smBreak) ) {
+		 	top:45%;
+		 }
+	}
+
+
+	& > span{
+		font-family: $font-light;
+		text-align: center;
+		color:white;
+		position: absolute;
+		width: 276px;
+		height: 130px;
+		top: 50%;
+		margin-top: 100px;
+		padding: 10px;
+		font-size: 1rem;
+		letter-spacing: 1px;
+
+		@include linear-gradient(lighten($aqua, 10), $blue);
+		@media only screen and (max-width: ($smBreak) ) { 
+	    position: relative;
+		margin: 0 auto !important;
+		left:0px !important;
+		display: block;
+		height: 75px;
+		font-size: .8rem;
+		top:45%;
+	    }
+
+
+		strong {
+			font-family: $font-primary;
+			@include clearfix;
+			display: block;
+			font-size: 5rem;
+			line-height: 4.5rem;
+			height: 80px;
+
+
+			
+			vertical-align: center;
+			@media only screen and (max-width: ($smBreak) ) { 
+				font-size: 2rem; line-height: 2rem;
+				vertical-align: baseline;
+				height: 30px;
+			}
+		}
+		
+		&.left{  left: 50%; margin-left: -286px;   }
+	    &.right{ left: 50%; margin-left: 10px;    }
+  
+
+	}
+}
+
+
+#slide3{  	
+	min-height: 550px; 	height: 55vh;
+	@include cover-horizontal('../img/bg3-bg.jpg'); 
+	background-position: center 0%;
+	background-color: $white;
+	@media only screen and (max-width: ($smBreak) ) {
+	   background-position: 80% 50% !important;
+	   min-height: 500px;
+	}
+	
+	
+	#slide3a{
+
+		width:1340px;
+		height: 100%;
+
+	    position: absolute;
+	    left:50%;
+	    margin-left: -1px * 1340px/2px;
+	    bottom:-10%;
+		
+		@include transform(scale(1));
+	    @include cover-horizontal('../img/bg3-fg.png'); 
+	    background-position: center 50%;	
+  		@media only screen and (max-width: $smBreak) {    left: 18% !important; top:10% !important; }
+
+	} 
+	.left, .right {
+		position: absolute;
+		top:0;
+		height: 100%;
+		background-position: center;
+		z-index: 0;
+	}
+
+	.left{
+	    background-image: url(../img/bg3-left.png);
+	    left: 0;
+	    background-position: 0% 0%;  //30
+	    width: 248px;
+	    @media only screen and (max-width: ($smBreak) ) {
+		   display: none !important;
+		}
+	    
+	} 
+
+	.right{
+		background-image: url(../img/bg3-right.png);
+		right: 0;
+		background-position: 0% 0%; //30
+		width: 455px;
+		@media only screen and (max-width: ($smBreak) ) {
+		   display: none !important;
+		}
+		
+	}
+
+}
+
+#slide4{  
+	min-height: 500px; height: 50vh;
+	@include cover-horizontal('../img/bg4-bg.jpg'); 
+	background-position: center 50%;
+	@media only screen and (max-width: $smBreak) {
+		background-position: -640px 0px;
+		h1{letter-spacing: .5px !important;}
+	} 
+
+
+	#slide4a{
+		position: absolute;
+		right: 0%;
+		top: 0%;
+		height: 100%;
+		width: 100%;
+		z-index: 0;
+
+		background-image: url(../img/bg4-fg.png);
+		background-repeat: no-repeat;
+		background-position: 100% 0%; //30
+		//background-size: 100% auto; 
+	    @media only screen and (max-width: $smBreak) {  
+	    	background-position: -120px 100px;
+	    	background-size: 100%;
+	    }
+	} 
+
+		
+}
+
+#slide5{  
+	min-height: 500px; height: 50vh; max-height: 540px;
+	@include cover-horizontal('../img/bg5-bg.jpg'); 
+	background-size: auto auto;
+	background-position: center 80%;
+	@media only screen and (max-width: ($smBreak) ) {
+	   background-position: 87% 50% !important;
+	}
+	
+	#slide5a{
+		position: absolute;
+		left: 50%;
+		top: 20%;
+		height: 100%;
+		width: 1258px;
+		z-index: 0;
+		margin-left: -300px;
+		//@include cover-horizontal('../img/bg5-fg.jpg'); 
+		background-image: url(../img/bg5-solo.png);
+
+		background-repeat: no-repeat;
+
+		background-position: 0% 0%; //30
+		//background-size: 100% auto; 
+	    @media only screen and (max-width: $smBreak) {left:5%;}
+	} 
+}
+
+#slide6{  
+	min-height: 500px; height: 50vh; max-height: 540px;
+	@include cover-horizontal('../img/bg6-bg.jpg'); 
+	background-position: center 50%;
+	@media only screen and (max-width: ($smBreak) ) {
+	   background-position: 100% 50% !important;
+	}
+	
+	#slide6a{
+
+		width:1340px;
+		height: 100%;
+
+	    position: absolute;
+	    left:50%;
+	    margin-left: -1px * 1340px/2px;
+	    bottom:-10%;
+		
+		@include transform(scale(1));
+	    @include cover-horizontal('../img/bg6-fg.png'); 
+	    background-position: center 50%;	
+  		@media only screen and (max-width: $smBreak) {    left: 18%; }
+
+	} 
+}
+
+
+
+
+#message1{  	
+	height:425px;
+	@media only screen and (max-width: ($smBreak) ) {
+		padding:20px 0px 0px 0px;
+	}
+	p{
+		@include blockCenter(650px);
+		margin-top: 20px;
+		margin-bottom: 40px;
+	}
+
+	//@include cover-background($bg1);  
+	div{
+		width:100vw;
+		position: relative;
+		height: 40px;
+
+		@media only screen and (max-width: ($smBreak) ) { 
+			height: auto;
+		}
+
+		a{ 
+			position: absolute;
+			font-size: 1rem;
+			font-family: $font-light;
+		
+			border:solid thin $white;
+			outline: none;
+			padding: 8px 0px 7px 0px;
+			text-decoration: none;
+			width: 260px ;
+			display: inline-block;
+			text-align: center;
+			text-transform: uppercase;
+			line-height: 30px;
+			color: $white;
+			@include transition(background-color 1s ease);
+			@include transition(color 1s ease);
+			
+			&:hover { background-color: $blue; color: lighten($blue, 40)  }
+		    &.left{ left: 50%; margin-left: -270px;   }
+		    &.right{ left: 50%; margin-left: 10px;    }
+
+		    @media only screen and (max-width: ($smBreak) ) { 
+
+				display: block;
+				position: relative;
+				left:0px !important;
+				margin:10px auto !important;
+				@include clearfix;
+		    }
+		}
+	}
+
+
+	
+
+}
+
+
+
+#message2{  	
+    z-index: 20;
+    padding-bottom: 20px;
+    @media only screen and (max-width: ($smBreak) ) {
+    	padding:0 3%;
+    }
+	& > h2{
+		color: $white;	
+		@media only screen and (max-width: ($smBreak) ) {
+			padding-top: 40px;
+		}
+	}
+	& > p{
+		@include blockCenter(800px);
+		margin-bottom: 25px;
+		margin-top: 40px;
+		@media only screen and (max-width: ($smBreak) ) {
+			margin-top: 0px;
+			margin-bottom: 45px;
+		}
+	}
+	.box{
+		margin-top: 60px;
+		margin-bottom: 10px;
+		@media only screen and (max-width: ($smBreak) ) {
+			margin-top: 30px;
+			margin-bottom: 40px;
+		}
+		div{
+			padding: 45px 30px 40px 30px;
+			@media only screen and (max-width: ($smBreak) ) {
+				padding: 40px 6%;
+			}
+			p{
+				font-size: 1rem; line-height: 1.2rem;
+				margin-bottom: 20px;
+			}
+		}
+	}	
+}
+
+#message3{  
+	z-index: 20;	
+ 	@media only screen and (max-width: ($smBreak) ) {
+		padding:20px 0px 0px 0px;
+	}
+	& > p{
+		@include blockCenter(550px);
+
+	}
+	& > p:nth-child(5){@include blockCenter(480px);}
+
+	#numbers{ margin-top: 40px;}
+	
+}
+
+
+
+#message4{ 
+	z-index: 20;	
+	@media only screen and (max-width: ($smBreak) ) {
+		padding-left:3%;
+		padding-right:3%;
+		padding-bottom: 0px;
+		h4{padding-top: 25px;}
+		h2{padding-top: 20px;}
+	}
+	.box {
+		margin-top: 80px;
+		@media only screen and (max-width: ($smBreak) ) {
+			margin-top: 50px;
+			margin-bottom: 70px;
+		}
+		
+		& > div{
+				
+				p{
+					margin-bottom: 10px;
+					&:last-child{
+						font-weight: 300; 
+						text-align: center; 
+						@include blockCenter(400px);
+						@media only screen and (max-width: ($smBreak) ) {
+							@include blockCenter(100%);
+							text-align: center;
+						}
+
+					}
+				}
+				
+				h4 {text-align: center; margin-bottom: 20px;}
+				.bar1 span { width: 54%;	}
+				.bar2 span { width: 50%;	}
+				.bar3 span { width: 73%;	}
+				@media only screen and (max-width: ($smBreak) ) {
+					padding:40px 6%;
+				}
+
+		}
+	}
+}
+
+#message5{
+	z-index: 20;
+	@media only screen and (max-width: ($smBreak) ) {
+    	padding:0 3%;
+    	h2{padding-top: 45px;}
+    }
+	& > *:last-child{
+			margin:auto auto 20px auto !important;
+			@media only screen and (max-width: ($smBreak) ) {
+				margin:auto auto 60px auto !important;
+			}
+		}
+
+
+	.box{
+		margin-top: 60px;
+		margin-bottom: 80px;
+		@media only screen and (max-width: ($smBreak) ) {
+			margin-top: 50px;
+		}
+
+		& > div{
+			@media only screen and (max-width: ($smBreak) ) {
+				padding-top: 40px;
+				padding-bottom: 35px;
+			}
+		}
+
+		
+		.bar1 span{ width: 51% }
+		.bar2 span{ width: 41% }
+		.bar3 span{ width: 72% }
+		.bar4 span{ width: 28% }
+		.bar5 span{ width: 74% }
+		.bar6 span{ width: 42% }
+		.bar7 span{ width: 58% }
+	}
+
+	#bArrow{
+		//border:solid thin red;
+		position: absolute;
+		bottom: -60px;
+		left: 80px;
+  		width: 70px;
+	}
+
+
+}
+
+#message5a{
+	border:solid 1px $black; //required
+	
+	background-image: url('../img/bg5a.jpg');
+	//@include cover-horizontal('../img/bg5a.jpg'); 
+	background-position: 50% 0%;
+	background-attachment: fixed;
+	padding: 40px 0px 0px 0px;
+	@media only screen and (max-width: ($smBreak) ) {
+		background-position: 30% 50%;
+		background-size: 675%;
+		padding-top: 20px;
+		background-attachment:scroll;
+		background-repeat: no-repeat;
+		padding:0 3%;
+	}
+	h2{
+		margin-bottom: 40px;
+		@media only screen and (max-width: ($smBreak) ) {
+			padding-top: 40px;
+		}
+	}
+	.box{
+		& > div{
+			background-color: transparent;
+		}
+		.bar1 span{ width: 58% }
+		.bar2 span{ width: 73% }
+		.bar3 span{ width: 67% }
+		.bar4 span{ width: 45% }
+		.bar5 span{ width: 38% }
+		.bar6 span{ width: 18% }
+			@media only screen and (max-width: ($smBreak) ) {
+				padding-top: 35px;
+				padding-bottom: 30px;
+			}
+
+	}
+}
+#message5b{
+	@media only screen and (max-width: ($smBreak) ) {
+    	padding:0 3%;
+    	h2{padding-top: 45px;}
+    }
+	.box{
+		margin-top: 60px;
+		margin-bottom: 0px;
+
+		@media only screen and (max-width: ($smBreak) ) {
+			margin-top: 50px;
+			margin-bottom: 60px;
+		}
+
+
+		h4:first-child{
+			color:$white;
+		}
+
+		.bar1 span{ width: 32% }
+		.bar2 span{ width: 29% }
+		.bar3 span{ width: 18% }
+		.bar4 span{ width: 10% }
+		.bar5 span{ width: 69% }
+		.bar6 span{ width: 65% }
+		.bar7 span{ width: 58% }
+		.bar8 span{ width: 45% }
+		.bar9 span{ width: 69% }
+		.bar10 span{ width: 67% }
+		& > div{
+			padding-bottom: 60px;
+			@media only screen and (max-width: ($smBreak) ) {
+				padding-top: 40px;
+				padding-bottom: 35px;
+			}
+		}
+
+	}
+}
+
+#message6{
+	z-index: 20;	
+	position: relative;
+	padding-bottom: 5px;
+
+}
+
+#message6a{	
+	z-index: 15;
+	@media only screen and (max-width: ($smBreak) ) {
+		padding-top: 45px;
+	}
+	//@include linear-gradient($lightBlue, $blue);
+	
+	 @include linear-gradient( $newBlue,  $newBlue);
+	 padding-bottom: 60px;
+
+	 p{ margin-bottom: 0px; position: static;	z-index: 10; }
+	
+	 #mediaIcons{
+	 	@include blockCenter(550px);
+	 	text-align: center;
+	 	color: $white;
+	 	padding: 40px 0px;
+	 	i{
+	 		font-size: 3.5rem;
+	 		margin: 0 5px;
+
+			@include transition(color .5s ease);
+				
+			&:hover { color: $lightAqua; }
+	 	}
+	 }
+	 div#splitButtons {
+	 	height: 50px;
+	 	font-family: $font-light;
+	 	@include clearfix;
+	 	 a{ 
+				position: absolute;
+				font-size: 1rem;
+				border:solid thin $white;
+				padding: 8px 0px 7px 0px;
+				text-decoration: none;
+				width: 260px ;
+				display: inline-block;
+				text-align: center;
+				text-transform: uppercase;
+				line-height: 30px;
+				color: $white;
+				@include transition(background-color 1s ease);
+				@include transition(color 1s ease);
+				
+				&:hover { background-color: $blue; color: lighten($blue, 40)  }
+			    &.left{ left: 50%; margin-left: -270px;   }
+			    &.right{ left: 50%; margin-left: 10px;    }
+
+			    @media only screen and (max-width: ($smBreak) ) { 
+
+					display: block;
+					position: relative;
+					left:0px !important;
+					margin:10px auto !important;
+					@include clearfix;
+			    }
+		}
+
+
+	 }
+
+	 & > *:last-child{
+		margin-bottom:0px;
+	 }
+}
+
+#message6b{
+	background-color: #d6d6d6;
+	height: 275px;
+	@media only screen and (max-width: ($smBreak) ) {
+		padding-top: 55px;
+		height: auto !important;
+	}
+	
+	p{
+		@include blockCenter(850px);
+		font-size: .8rem;
+		line-height: 1rem;
+		color: $gray2;
+		margin-bottom: 20px;
+		font-weight: 500;
+		text-transform: uppercase;
+		background-color: #d6d6d6;
+		@media only screen and (max-width: ($smBreak) ) {
+		margin-bottom: 0px;
+	}
+	}
+	p:last-child{
+		margin-top: 50px;
+		background-color: #d6d6d6;
+		a{
+			color:$blue;
+			display: block;
+			margin-bottom: 5px;
+			background-color: #d6d6d6;
+		}
+	}
+}
+
