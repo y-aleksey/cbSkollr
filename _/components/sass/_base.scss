@@ -365,51 +365,114 @@ article {
 }
 
 #sideNav{
-	margin-left: 30px;
+	margin-left: 0px;
 	position: fixed;
 	z-index: 99;
 	color: $white;
 	top: 50%;
 	left: 0%;
 	height: auto;
-	width: auto;
+	width: 250px;
 	margin-top: -100px;
 	@media only screen and (max-width: ($smBreak) ) { 
 			display: none;
-	}
-	//@include red;
-	li{
-		cursor: pointer;
-		height: 22px;
-		//@include red;
-		a{
-			color: $white;		
-			display: inline-block;
+	} 
+	ul{
+		li{
+			padding: 0px 0px 0px 20px;
 
-			span{
-				display: inline-block;
-				@include circle(15px, $gray3);
+			cursor: default;
+			height: auto;
+			width: 50px;
+			a{
+				display: block;
+				cursor: default;
+				span{
+					cursor: pointer;
 
-				&.active{
-				@include circle(16px, $gray);
-				border:solid 2px $white;	
+					display: inline-block;
+					@include circle(15px, $gray3);
+				}
+
+				strong{
+					font-family: $font-light;
+					color:transparent;
+					height: 18px;
+	  				line-height: 18px;
+					display: inline-block; 
+					font-size: 14px;
+					position: absolute;
+					margin-left: 10px;
+					margin-top: 5px;
+					overflow: hidden;
+  					cursor: pointer;
+  					width: 20px;
+				}
+			} 
+
+			&.active{
+				width: 250px;
+				@include transition(width .5s ease);
+
+				@include round-right-corners(10px);
+				background-color: #b2b5b7; 
+				//@include transition(background-color 1s ease);
+				
+
+				span	{
+					@include circle(16px, $gray);
+					border:solid 2px $white;	
+					@include transition(border-color .5s ease);
+				}
+
+				strong{
+					display: inline-block; 
+					color: $white;
+					cursor: pointer;
+					width: 200px;
+					@include transition-delay(5s);
+					@include transition(width .5s ease);
 
 				}
 			}
-
-			strong{
-				font-family: $font-light;
-				width: 300px;
-				height: 18px;
-  				line-height: 18px;
-				display: block;
-				font-size: 18px;
-				position: absolute;
-				margin-left: 10px;
-				margin-top: 5px;
+			&.active:first-child{
+				width: 100px;
+				strong{
+					width: 50px;
+				}
 			}
+			&.active:nth-child(2){
+				strong{}
+			}
+			&.active:nth-child(3){
+				width: 200px;
+				strong{
+					width: 150px;
+				}
+			}
+			&.active:nth-child(4){
+				strong{	}
+			}
+			&.active:nth-child(5){
+				width: 180px;
+				strong{
+					width: 130px;
+				}
+			}
+			&.active:nth-child(6){
+				width: 200px;
+				strong{
+					width: 150px;
+				}
+			}
+
+
+			
 		}
 	}
+	//@include red;
+	
+
 }
 
 .grayFiller{

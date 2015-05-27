@@ -548,7 +548,7 @@
 
 			})
 		}
-
+/*
 		$( "#sideNav li strong" ).hide();
 
 		$('#sideNav li').hover(
@@ -575,13 +575,14 @@
 			  }
 		);
 	
+		*/
 
 
 		//Side Navigation---------------//
 
 		function updateNav(un){
-			$('#sideNav').find('span.active').removeClass('active');
-			$('#sideNav li').eq(un).find('a span').addClass('active');
+			$('#sideNav').find('li.active, span.active, strong.active').removeClass('active');
+			$('#sideNav li').eq(un).addClass('active');
 		}
 
 		var bp1, bp2, bp3, bp4, bp5;

@@ -17,8 +17,6 @@ $links = array(
 
     'consumer'=>'http://careerbuildercommunications.com/candidatebehavior2013/',
 //'consumer'=>'http://thehiringsite.careerbuilder.com/2013/10/22/candidate-behavior-webinar/',
-
-
     'facebook'=>'http://facebook.com/cbforemployers',
     'twitter'=>'http://twitter.com/cbforemployers',
     'youtube'=>'http://youtube.com/cbforemployers',
@@ -1516,14 +1514,19 @@ $links = array(
 	</article>
 	</div>
 
-	<div id="sideNav">
+	<div id="sideNav"
+	data-anchor-target="#home"
+	data-start="top:40%;"     
+    data-center="top:50%;" 
+    data-bottom="top:60%;" 
+	>
 		<ul>
-			<li><a href="#home"><span class="active"></span><strong>Home</a>	</strong></li>
-			<li><a href="#slide2"><span></span><strong>Candidate-Powered Economy</a>	</strong></li>
-			<li><a href="#slide3"><span></span><strong>Candidate Process</a>			</strong></li>
-			<li><a href="#slide4"><span></span><strong>Pressured-Employer Economy</a>	</strong></li>
-			<li><a href="#slide5"><span></span><strong>The Hiring Process</a>			</strong></li>
-			<li><a href="#slide6"><span></span><strong>Recommendations</a>				</strong></li>
+			<li class="active"><a href="#home"><span ></span><strong>Home	</strong></a> </li>
+			<li><a href="#slide2"><span></span><strong>Candidate-Powered Economy </strong></a></li>
+			<li><a href="#slide3"><span></span><strong>Candidate Process		 </strong></a></li>
+			<li><a href="#slide4"><span></span><strong>Pressured-Employer Economy</strong></a></li>
+			<li><a href="#slide5"><span></span><strong>The Hiring Process</strong>		  </a> </li>
+			<li><a href="#slide6"><span></span><strong>Recommendations</strong></a></li>
 		</ul>
 	</div>
 
