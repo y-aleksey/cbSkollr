@@ -6,15 +6,5 @@ We decided on a parallax page that would help draw the visitors in and maintain 
 I was happy that way it turned out and wanted to share the work I did. 
 I used skollr.js and www.ihatetomatoes.net for their great tutorials. As well as SASS, modernizer.js and grunt.js.
 
-<a href="http://www.careerbuildercommunications.com/candidatebehavior/">View Site</a>
+<a href="demo.artsir.com/cb/">Demo</a>
 
-## Sample Code
-You can find my .js file in _/components/js/script.js
-
-## Installation
-
-No installation required.
-
-## License
-
-Script is MIT licensed and free and will always be kept this way. 
